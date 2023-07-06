@@ -66,23 +66,35 @@ console.log("Terzo esercizio - con numero > di 19", crazyDiff(25));
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function boundary(n) {
-  let ret = "false";
-  if (n <= 100 || n === 400) {
-    ret = "true";
+  let ret = false;
+  if ((n > 20) & (n <= 100) || n === 400) {
+    ret = true;
   }
   return ret;
 }
 
 console.log("Quarto esercizio - con true", boundary(90));
-console.log("Terzo esercizio - con false", boundary(255));
+console.log("Quarto esercizio - con false", boundary(255));
 
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta una stringa come parametro.
- La funzione deve aggiungere la parola "EPICODE" all'inizio della stringa fornita, ma se la stringa fornita comincia già con "EPICODE" allora deve
+ La funzione deve aggiungere la parola "EPICODE" all'inizio della stringa fornita, ma se la stringa fornita comincia
+  già con "EPICODE" allora deve
  ritornare la stringa originale senza alterarla.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function epify(s1) {
+  //let ret = false;
+  if (s1.indexOf("EPICODE") !== 0) {
+    s1 = "EPICODE" + s1;
+  }
+
+  return s1;
+}
+
+console.log("Quinto esercizio", epify("EPICODE è difficilissimo"));
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare
@@ -92,11 +104,28 @@ che il parametro sia un multiplo
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function check3and7(n) {
+  let ret = false;
+  if (n % 3 === 0 || n % 7 === 0) {
+    ret = true;
+  }
+  return ret;
+}
+
+console.log("Sesto esercizio", check3and7(120));
+
 /* ESERCIZIO 7
- Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
+ Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come
+  parametro (es. "EPICODE" --> "EDOCIPE")
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+console.log("Settimo esercizio", reverseString("EPICODE"));
 
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
